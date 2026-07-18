@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  *{box-sizing:border-box}
+  html{background:#eef1f5}
+  body{margin:0; background:#eef1f5}
+  x-dc{display:block; min-height:100vh; padding:36px 20px 48px}
+  .article-page{max-width:920px; margin:0 auto; padding:46px 56px 54px; background:#fff; box-shadow:0 8px 28px rgba(29,29,31,.08); border-radius:4px}
+  @media (max-width:700px){
+    x-dc{padding:16px 10px 28px}
+    .article-page{padding:30px 20px 38px; border-radius:2px}
+  }
+  a{color:#2f6fb0}
+  a:hover{color:#245a90}
+</style>
+</helmet>
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="a4" margin="16mm" hint-size="794px,1123px">
+<div class="article-page" style="font-family:'Noto Sans',sans-serif; color:#2c2c30; font-size:10.5pt; line-height:1.75; -webkit-font-smoothing:antialiased;">
+
+  <!-- ===== HEADLINE ===== -->
+  <div style="margin-top:26px;">
+    <div style="display:inline-block; font-size:8.5pt; font-weight:700; letter-spacing:.12em; color:#fff; background:#2f6fb0; padding:3px 11px; border-radius:3px;">RESEARCH HIGHLIGHT</div>
+    <h1 style="font-family:'Noto Serif',serif; font-size:27pt; font-weight:700; line-height:1.28; color:#1d1d1f; margin:12px 0 0; text-wrap:balance;">Teaching AI to draw a “map of emotions”</h1>
+    <p style="font-family:'Noto Serif',serif; font-size:13.5pt; font-weight:500; line-height:1.45; color:#245a90; margin:12px 0 0; text-wrap:balance;">A new way to organize 99 emotion words — simply by prompting GPT-4</p>
+  </div>
+
+  <!-- ===== LEAD / SUMMARY ===== -->
+  <div style="margin-top:22px; background:#f6f8fb; border-left:4px solid #2f6fb0; padding:18px 22px; border-radius:2px;">
+    <p style="margin:0 0 12px; font-size:10.5pt; line-height:1.8;">How similar are “joy” and “surprise”? And how far apart are “joy” and “sadness”? We naturally organize the words for our emotions according to how close or how different their meanings are. Yet as the number of emotion words grows, the combinations that must be compared increase sharply, making the whole picture hard for people alone to examine in detail.</p>
+    <p style="margin:0 0 12px; font-size:10.5pt; line-height:1.8;">Researcher <strong style="font-weight:700; color:#1d1d1f;">Ke Han</strong> and Associate Professor <strong style="font-weight:700; color:#1d1d1f;">Eiji Watanabe</strong> of the Laboratory of Neurophysiology at the National Institute for Basic Biology had GPT-4 arrange emotion words in space to investigate how humans organize them. As a result, “prompting” — asking GPT-4 in ordinary sentences — reproduced a structure closely resembling the arrangements made by people. Moreover, when the set was expanded to 99 words, a structure related to emotional “arousal”, hard to see with only a few words, emerged.</p>
+    <p style="margin:0; font-size:10.5pt; line-height:1.8;">The study suggests that the structure of emotion concepts can be examined <strong style="font-weight:700; color:#1d1d1f;">using nothing but questions posed in words</strong> — with no specialized AI training and no large-scale computing facilities.</p>
+  </div>
+
+  <!-- ===== SECTION 01 ===== -->
+  <h2 style="font-family:'Noto Serif',serif; font-size:15pt; font-weight:700; color:#1d1d1f; margin:34px 0 12px; padding-bottom:6px; border-bottom:2px solid #2f6fb0; display:flex; align-items:baseline; gap:11px;"><span style="font-size:11pt; color:#2f6fb0; font-weight:700; font-family:'Noto Sans',sans-serif;">01</span>Emotions can be expressed not only by “type” but by “position”</h2>
+  <p style="margin:0 0 12px;">Emotions can be sorted into types such as “joy”, “anger”, and “sadness”. Psychology also offers an approach that represents emotions along several continuous axes. Three of them are representative.</p>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:16px 0;">
+    <div style="border:1.5px solid #d9d6d0; border-top:4px solid #2f6fb0; border-radius:4px; padding:13px 15px;">
+      <div style="font-weight:700; color:#1d1d1f; font-size:11pt;">Pleasure</div>
+      <div style="font-size:8pt; letter-spacing:.1em; color:#2f6fb0; font-weight:700; margin:1px 0 7px;">PLEASANT / UNPLEASANT</div>
+      <div style="font-size:9pt; line-height:1.65; color:#4a4a50;">Is it pleasant, or unpleasant?</div>
+    </div>
+    <div style="border:1.5px solid #d9d6d0; border-top:4px solid #2f6fb0; border-radius:4px; padding:13px 15px;">
+      <div style="font-weight:700; color:#1d1d1f; font-size:11pt;">Arousal</div>
+      <div style="font-size:8pt; letter-spacing:.1em; color:#2f6fb0; font-weight:700; margin:1px 0 7px;">EXCITED / CALM</div>
+      <div style="font-size:9pt; line-height:1.65; color:#4a4a50;">Is it excited, or calm?</div>
+    </div>
+    <div style="border:1.5px solid #d9d6d0; border-top:4px solid #2f6fb0; border-radius:4px; padding:13px 15px;">
+      <div style="font-weight:700; color:#1d1d1f; font-size:11pt;">Dominance</div>
+      <div style="font-size:8pt; letter-spacing:.1em; color:#2f6fb0; font-weight:700; margin:1px 0 7px;">IN CONTROL / OVERWHELMED</div>
+      <div style="font-size:9pt; line-height:1.65; color:#4a4a50;">Do you feel in control of the situation, or overwhelmed by it?</div>
+    </div>
+  </div>
+  <p style="margin:0 0 12px;">For example, “excitement” and “serenity” are both relatively pleasant, yet they differ greatly in arousal. “Rage” and “sadness” are both unpleasant, but again differ in arousal. Such structure has mainly been studied by asking people to rate how similar emotion words are. However, an experiment comparing all of many emotion words places a very heavy burden on participants.</p>
+
+  <!-- ===== SECTION 02 ===== -->
+  <h2 style="font-family:'Noto Serif',serif; font-size:15pt; font-weight:700; color:#1d1d1f; margin:34px 0 12px; padding-bottom:6px; border-bottom:2px solid #2f6fb0; display:flex; align-items:baseline; gap:11px;"><span style="font-size:11pt; color:#2f6fb0; font-weight:700; font-family:'Noto Sans',sans-serif;">02</span>Placing three emotion words on a map</h2>
+  <p style="margin:0 0 12px;">The research team devised a task in which <strong style="font-weight:700; color:#1d1d1f;">three emotion words are placed at once on a grid on screen</strong>. Words felt to be similar in meaning go close together; words felt to be different go far apart. Placing three words at once expresses three relationships simultaneously. In the first study, 89 participants and GPT-4 performed the same task using six basic emotions, and the results were compared with the conventional “word embedding” method that represents emotion words as arrays of numbers.</p>
+
+  <!-- ===== FIGURE 1 ===== -->
+  <figure style="break-inside:avoid; margin:20px 0; border:1px solid #d9d6d0; border-radius:6px; overflow:hidden;">
+    <div style="background:#1d1d1f; color:#fff; padding:9px 16px; display:flex; align-items:baseline; gap:10px;">
+      <span style="font-size:9pt; font-weight:700; letter-spacing:.1em; color:#7fb0dd;">FIG. 1</span>
+      <span style="font-size:10pt; font-weight:700;">The study at a glance — placing words on a “map” to measure distance</span>
+    </div>
+    <div style="padding:20px 20px 8px; background:#fbfbfa;">
+
+      <div style="border:1.5px solid #d9d6d0; border-radius:6px; background:#fff; padding:12px 16px; display:flex; align-items:center; gap:16px;">
+        <div style="flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:#2f6fb0; color:#fff; font-weight:700; font-size:11pt; display:flex; align-items:center; justify-content:center;">1</div>
+        <div style="flex:0 0 165px; font-weight:700; color:#1d1d1f; font-size:10pt;">Present three emotion words</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <span style="padding:6px 14px; border-radius:22px; font-size:10pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.5px solid #dbb480;">Joy</span>
+          <span style="padding:6px 14px; border-radius:22px; font-size:10pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.5px solid #dbb480;">Surprise</span>
+          <span style="padding:6px 14px; border-radius:22px; font-size:10pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.5px solid #9dbfe0;">Sadness</span>
+        </div>
+      </div>
+      <div style="text-align:center; color:#9a9a9f; font-size:14pt; line-height:1; margin:4px 0;">▼</div>
+
+      <div style="border:1.5px solid #d9d6d0; border-radius:6px; background:#fff; padding:12px 16px; display:flex; align-items:center; gap:16px;">
+        <div style="flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:#2f6fb0; color:#fff; font-weight:700; font-size:11pt; display:flex; align-items:center; justify-content:center;">2</div>
+        <div style="flex:0 0 165px; font-weight:700; color:#1d1d1f; font-size:10pt;">Place them on a grid<br><span style="font-weight:400; font-size:8.5pt; color:#6d6d73;">similar close, different far</span></div>
+        <div style="position:relative; width:210px; height:120px; background-image:linear-gradient(#eceae5 1px,transparent 1px),linear-gradient(90deg,#eceae5 1px,transparent 1px); background-size:21px 21px; border:1px solid #d9d6d0; border-radius:3px;">
+          <span style="position:absolute; left:16px; top:14px; padding:3px 9px; border-radius:14px; font-size:8pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.3px solid #dbb480;">Joy</span>
+          <span style="position:absolute; left:60px; top:32px; padding:3px 9px; border-radius:14px; font-size:8pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.3px solid #dbb480;">Surprise</span>
+          <span style="position:absolute; right:10px; bottom:12px; padding:3px 9px; border-radius:14px; font-size:8pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Sadness</span>
+          <svg viewBox="0 0 210 120" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none;"><line x1="55" y1="36" x2="150" y2="96" stroke="#b6b3ad" stroke-width="1.4" stroke-dasharray="4 3"/></svg>
+        </div>
+      </div>
+      <div style="text-align:center; color:#9a9a9f; font-size:14pt; line-height:1; margin:4px 0;">▼</div>
+
+      <div style="border:1.5px solid #d9d6d0; border-radius:6px; background:#fff; padding:12px 16px; display:flex; align-items:center; gap:16px;">
+        <div style="flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:#2f6fb0; color:#fff; font-weight:700; font-size:11pt; display:flex; align-items:center; justify-content:center;">3</div>
+        <div style="flex:0 0 165px; font-weight:700; color:#1d1d1f; font-size:10pt;">Measure with three methods</div>
+        <div style="display:flex; gap:10px; flex:1; flex-wrap:wrap;">
+          <div style="flex:1; min-width:120px; border:1.5px solid #9dbfe0; background:#f4f8fc; border-radius:5px; padding:9px 11px;"><div style="font-weight:700; color:#245a90; font-size:9.5pt;">Humans</div><div style="font-size:8pt; color:#4a4a50; margin-top:2px;">89 participants place them</div></div>
+          <div style="flex:1; min-width:120px; border:1.5px solid #9dbfe0; background:#f4f8fc; border-radius:5px; padding:9px 11px;"><div style="font-weight:700; color:#245a90; font-size:9.5pt;">GPT-4</div><div style="font-size:8pt; color:#4a4a50; margin-top:2px;">prompted to place them</div></div>
+          <div style="flex:1; min-width:120px; border:1.5px solid #cfccc5; background:#f5f4f1; border-radius:5px; padding:9px 11px;"><div style="font-weight:700; color:#6d6d73; font-size:9.5pt;">Word embedding</div><div style="font-size:8pt; color:#4a4a50; margin-top:2px;">distance from numbers</div></div>
+        </div>
+      </div>
+      <div style="text-align:center; color:#9a9a9f; font-size:14pt; line-height:1; margin:4px 0;">▼</div>
+
+      <div style="border:1.5px solid #2f6fb0; border-radius:6px; background:#eef3f9; padding:12px 16px; display:flex; align-items:center; gap:16px;">
+        <div style="flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:#1d1d1f; color:#fff; font-weight:700; font-size:11pt; display:flex; align-items:center; justify-content:center;">4</div>
+        <div style="flex:0 0 165px; font-weight:700; color:#1d1d1f; font-size:10pt;">Build a map of emotions from the “semantic distance” between words</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 190 96" style="width:190px; height:96px;" font-family="Noto Sans">
+            <rect x="1" y="1" width="188" height="94" rx="5" fill="#fff" stroke="#dbb480" stroke-width="1.3"/>
+            <circle cx="52" cy="34" r="7" fill="#cf8636"/><text x="52" y="55" font-size="8" fill="#a5661f" text-anchor="middle">Joy</text>
+            <circle cx="82" cy="46" r="7" fill="#cf8636"/><text x="82" y="67" font-size="8" fill="#a5661f" text-anchor="middle">Surprise</text>
+            <circle cx="142" cy="62" r="7" fill="#2f6fb0"/><text x="142" y="83" font-size="8" fill="#245a90" text-anchor="middle">Sadness</text>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+    <figcaption style="font-size:8.5pt; line-height:1.6; color:#5a5a60; padding:11px 18px 14px; background:#fbfbfa; border-top:1px solid #eceae5;">Three emotion words are placed on a grid at once. The task is run by humans, by GPT-4, and by word embeddings, and the “semantic distance” between words is used to draw a map of emotions.</figcaption>
+  </figure>
+
+  <!-- ===== SECTION 03 ===== -->
+  <h2 style="font-family:'Noto Serif',serif; font-size:15pt; font-weight:700; color:#1d1d1f; margin:34px 0 12px; padding-bottom:6px; border-bottom:2px solid #2f6fb0; display:flex; align-items:baseline; gap:11px;"><span style="font-size:11pt; color:#2f6fb0; font-weight:700; font-family:'Noto Sans',sans-serif;">03</span>GPT-4’s arrangement closely resembled that of humans</h2>
+  <p style="margin:0 0 12px;">For the six basic emotions, humans and GPT-4 both formed two groups: “joy · surprise” and “anger · fear · disgust · sadness”. By contrast, word embeddings placed “joy” and “anger” in the same group, giving a structure different from humans. The distances produced by humans and GPT-4 were strongly correlated, and the responses among human participants themselves agreed very closely.</p>
+  <p style="margin:0 0 12px;">This does not mean, however, that GPT-4 experiences the same emotions as humans. GPT-4 is thought to have produced human-like arrangements by drawing on the relationships among emotion concepts contained in human language.</p>
+
+  <!-- ===== FIGURE 2 ===== -->
+  <figure style="break-inside:avoid; margin:20px 0; border:1px solid #d9d6d0; border-radius:6px; overflow:hidden;">
+    <div style="background:#1d1d1f; color:#fff; padding:9px 16px; display:flex; align-items:baseline; gap:10px;">
+      <span style="font-size:9pt; font-weight:700; letter-spacing:.1em; color:#7fb0dd;">FIG. 2</span>
+      <span style="font-size:10pt; font-weight:700;">How the six basic emotions group together — humans, GPT-4, word embeddings</span>
+    </div>
+    <div style="padding:18px 18px 6px; background:#fbfbfa; display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+
+      <div style="border:1.5px solid #d9d6d0; border-radius:6px; background:#fff; padding:13px 12px;">
+        <div style="text-align:center; font-weight:700; color:#1d1d1f; font-size:10.5pt; margin-bottom:12px;">Humans</div>
+        <div style="border:1.5px dashed #dbb480; background:#fbf4ea; border-radius:12px; padding:10px 9px; margin-bottom:9px;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;">
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.3px solid #dbb480;">Joy</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.3px solid #dbb480;">Surprise</span>
+          </div>
+        </div>
+        <div style="border:1.5px dashed #9dbfe0; background:#f4f8fc; border-radius:12px; padding:10px 9px;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;">
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Anger</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Fear</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Disgust</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Sadness</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #2f6fb0; border-radius:6px; background:#fff; padding:13px 12px; box-shadow:0 0 0 3px #eef3f9;">
+        <div style="text-align:center; font-weight:700; color:#245a90; font-size:10.5pt; margin-bottom:12px;">GPT-4 prompting</div>
+        <div style="border:1.5px dashed #dbb480; background:#fbf4ea; border-radius:12px; padding:10px 9px; margin-bottom:9px;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;">
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.3px solid #dbb480;">Joy</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.3px solid #dbb480;">Surprise</span>
+          </div>
+        </div>
+        <div style="border:1.5px dashed #9dbfe0; background:#f4f8fc; border-radius:12px; padding:10px 9px;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;">
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Anger</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Fear</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Disgust</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Sadness</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #d9d6d0; border-radius:6px; background:#fff; padding:13px 12px;">
+        <div style="text-align:center; font-weight:700; color:#6d6d73; font-size:10.5pt; margin-bottom:12px;">Word embedding</div>
+        <div style="border:1.5px dashed #d3c9bd; background:#faf7f2; border-radius:12px; padding:10px 9px; margin-bottom:9px;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;">
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.3px solid #dbb480;">Joy</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Anger</span>
+          </div>
+        </div>
+        <div style="border:1.5px dashed #b7d2ea; background:#f6f9fc; border-radius:12px; padding:10px 9px;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;">
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.3px solid #dbb480;">Surprise</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Fear</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Disgust</span>
+            <span style="padding:4px 9px; border-radius:16px; font-size:8.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.3px solid #9dbfe0;">Sadness</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <figcaption style="font-size:8.5pt; line-height:1.6; color:#5a5a60; padding:11px 18px 14px; background:#fbfbfa; border-top:1px solid #eceae5;">Humans and GPT-4 grouped “joy” and “surprise” together. Word embeddings, by contrast, placed “joy” and “anger” in the same group — a structure different from humans. (Dashed outlines mark clusters of semantically close emotion words.)</figcaption>
+  </figure>
+
+  <!-- ===== SECTION 04 ===== -->
+  <h2 style="font-family:'Noto Serif',serif; font-size:15pt; font-weight:700; color:#1d1d1f; margin:34px 0 12px; padding-bottom:6px; border-bottom:2px solid #2f6fb0; display:flex; align-items:baseline; gap:11px;"><span style="font-size:11pt; color:#2f6fb0; font-weight:700; font-family:'Noto Sans',sans-serif;">04</span>Lining up 99 emotion words revealed a hidden axis</h2>
+  <p style="margin:0 0 12px;">Next, the team expanded the set to 99 emotion words. Having human participants repeatedly compare all relationships among 99 words is practically very difficult, but with GPT-4 the same task can be repeated across many combinations. The analysis showed that, with both prompting and word embeddings, the emotion words split mainly into two large groups related to “pleasure” and “dominance”, and that GPT-4’s arrangement separated the two groups more clearly.</p>
+  <p style="margin:0 0 12px;">On closer inspection, GPT-4’s arrangement also revealed changes corresponding to <strong style="font-weight:700; color:#1d1d1f;">“arousal”</strong>. This appeared not as the main axis dividing the large groups, but as an axis that finely divides the interior of each group. The structure was not clear with only six basic emotions and was detected only once the set was expanded to 99 words.</p>
+
+  <!-- ===== FIGURE 3 ===== -->
+  <figure style="break-inside:avoid; margin:20px 0; border:1px solid #d9d6d0; border-radius:6px; overflow:hidden;">
+    <div style="background:#1d1d1f; color:#fff; padding:9px 16px; display:flex; align-items:baseline; gap:10px;">
+      <span style="font-size:9pt; font-weight:700; letter-spacing:.1em; color:#7fb0dd;">FIG. 3</span>
+      <span style="font-size:10pt; font-weight:700;">Vocabulary size changes the structure you see — 6 vs. 99 words (conceptual)</span>
+    </div>
+    <div style="padding:18px; background:#fbfbfa; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+
+      <div style="border:1.5px solid #d9d6d0; border-radius:6px; background:#fff; padding:14px 14px 12px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+          <span style="font-size:8.5pt; font-weight:700; color:#fff; background:#9a9a9f; padding:2px 9px; border-radius:11px;">6 words</span>
+          <span style="font-size:8.5pt; color:#6d6d73;">Two large groups visible / arousal unclear</span>
+        </div>
+        <div style="border:1.5px dashed #dbb480; background:#fbf4ea; border-radius:10px; padding:16px 10px; text-align:center; margin-bottom:10px;">
+          <div style="font-weight:700; color:#a5661f; font-size:10pt;">Pleasant emotions</div>
+        </div>
+        <div style="border:1.5px dashed #9dbfe0; background:#f4f8fc; border-radius:10px; padding:16px 10px; text-align:center;">
+          <div style="font-weight:700; color:#245a90; font-size:10pt;">Unpleasant emotions</div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #2f6fb0; border-radius:6px; background:#fff; padding:14px 14px 12px; box-shadow:0 0 0 3px #eef3f9;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+          <span style="font-size:8.5pt; font-weight:700; color:#fff; background:#2f6fb0; padding:2px 9px; border-radius:11px;">99 words</span>
+          <span style="font-size:8.5pt; color:#245a90; font-weight:600;">Arousal appears inside each group</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:0 0 20px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:4px 0;">
+            <span style="font-size:8pt; color:#6d6d73; white-space:nowrap;">High</span>
+            <div style="flex:1; width:2px; background:linear-gradient(#4a4a50,#c9c6c0); margin:3px 0; position:relative;"><span style="position:absolute; top:50%; left:6px; transform:translateY(-50%) rotate(90deg); transform-origin:left; font-size:7pt; color:#6d6d73; white-space:nowrap; letter-spacing:.08em;">Arousal</span></div>
+            <span style="font-size:8pt; color:#6d6d73; white-space:nowrap;">Low</span>
+          </div>
+          <div style="flex:1;">
+            <div style="border:1.5px dashed #dbb480; background:#fbf4ea; border-radius:10px; padding:8px; margin-bottom:9px;">
+              <div style="font-weight:700; color:#a5661f; font-size:8.5pt; text-align:center; margin-bottom:6px;">Pleasant emotions</div>
+              <div style="display:flex; flex-direction:column; gap:5px;">
+                <div style="display:flex; gap:5px; justify-content:center; align-items:center;"><span style="padding:2px 8px; border-radius:12px; font-size:7.5pt; font-weight:600; background:#dca94f; color:#fff;">Excitement</span><span style="padding:2px 8px; border-radius:12px; font-size:7.5pt; font-weight:600; background:#dca94f; color:#fff;">Ecstasy</span><span style="font-size:7pt; color:#6d6d73;">High</span></div>
+                <div style="display:flex; gap:5px; justify-content:center; align-items:center;"><span style="padding:2px 8px; border-radius:12px; font-size:7.5pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.2px solid #dbb480;">Contentment</span><span style="padding:2px 8px; border-radius:12px; font-size:7.5pt; font-weight:600; background:#f9f0e6; color:#a5661f; border:1.2px solid #dbb480;">Serenity</span><span style="font-size:7pt; color:#6d6d73;">Low</span></div>
+              </div>
+            </div>
+            <div style="border:1.5px dashed #9dbfe0; background:#f4f8fc; border-radius:10px; padding:8px;">
+              <div style="font-weight:700; color:#245a90; font-size:8.5pt; text-align:center; margin-bottom:6px;">Unpleasant emotions</div>
+              <div style="display:flex; flex-direction:column; gap:5px;">
+                <div style="display:flex; gap:5px; justify-content:center; align-items:center;"><span style="padding:2px 8px; border-radius:12px; font-size:7.5pt; font-weight:600; background:#2f6fb0; color:#fff;">Rage</span><span style="padding:2px 8px; border-radius:12px; font-size:7.5pt; font-weight:600; background:#2f6fb0; color:#fff;">Terror</span><span style="font-size:7pt; color:#6d6d73;">High</span></div>
+                <div style="display:flex; gap:5px; justify-content:center; align-items:center;"><span style="padding:2px 8px; border-radius:12px; font-size:7.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.2px solid #9dbfe0;">Sadness</span><span style="padding:2px 8px; border-radius:12px; font-size:7.5pt; font-weight:600; background:#eef3f9; color:#245a90; border:1.2px solid #9dbfe0;">Gloom</span><span style="font-size:7pt; color:#6d6d73;">Low</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <figcaption style="font-size:8.5pt; line-height:1.6; color:#5a5a60; padding:11px 18px 14px; background:#fbfbfa; border-top:1px solid #eceae5;">With only a few emotion words, the large “pleasant vs. unpleasant” difference is easy to find, but finer differences in “arousal (intensity)” are easily missed. Expanding to 99 words reveals high/low arousal inside each group. *A conceptual diagram illustrating the meaning of the results, not a faithful reproduction of the scatter plot.</figcaption>
+  </figure>
+
+  <!-- ===== FIGURE 4 ===== -->
+  <figure style="break-inside:avoid; margin:20px 0; border:1px solid #d9d6d0; border-radius:6px; overflow:hidden;">
+    <div style="background:#1d1d1f; color:#fff; padding:9px 16px; display:flex; align-items:baseline; gap:10px;">
+      <span style="font-size:9pt; font-weight:700; letter-spacing:.1em; color:#7fb0dd;">FIG. 4</span>
+      <span style="font-size:10pt; font-weight:700;">A map of the 99 emotion words (representative words shown)</span>
+    </div>
+    <div style="padding:16px 18px 8px; background:#fbfbfa;">
+      <svg viewBox="0 0 640 420" style="width:100%; height:auto; display:block;" font-family="Noto Sans">
+        <defs>
+          <linearGradient id="valence-en" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#eef3f9"/><stop offset="0.5" stop-color="#fbfbfa"/><stop offset="1" stop-color="#f9f0e6"/>
+          </linearGradient>
+        </defs>
+        <rect x="70" y="40" width="530" height="340" fill="url(#valence-en)" stroke="#d9d6d0" stroke-width="1"/>
+        <ellipse cx="200" cy="200" rx="115" ry="158" fill="none" stroke="#9dbfe0" stroke-width="1.6" stroke-dasharray="6 4"/>
+        <ellipse cx="490" cy="200" rx="110" ry="158" fill="none" stroke="#dbb480" stroke-width="1.6" stroke-dasharray="6 4"/>
+        <text x="200" y="66" font-size="12" fill="#245a90" text-anchor="middle" font-weight="700">Unpleasant</text>
+        <text x="490" y="66" font-size="12" fill="#a5661f" text-anchor="middle" font-weight="700">Pleasant</text>
+        <text x="335" y="405" font-size="11" fill="#4a4a50" text-anchor="middle">← Unpleasant　　horizontal: pleasure　　Pleasant →</text>
+        <text x="26" y="210" font-size="11" fill="#4a4a50" text-anchor="middle" transform="rotate(-90 26 210)">← Low　　vertical: arousal　　High →</text>
+        <g><circle cx="139" cy="83" r="8" fill="#eef3f9" stroke="#2f6fb0" stroke-width="3.4"/><text x="139" y="70" font-size="10" fill="#245a90" text-anchor="middle">Panic</text></g>
+        <g><circle cx="165" cy="99" r="8" fill="#eef3f9" stroke="#2f6fb0" stroke-width="3.4"/><text x="165" y="122" font-size="10" fill="#245a90" text-anchor="middle">Rage</text></g>
+        <g><circle cx="202" cy="116" r="8" fill="#eef3f9" stroke="#2f6fb0" stroke-width="3.4"/><text x="222" y="119" font-size="10" fill="#245a90" text-anchor="start">Terror</text></g>
+        <g><circle cx="186" cy="281" r="8" fill="#eef3f9" stroke="#2f6fb0" stroke-width="1.5"/><text x="186" y="303" font-size="10" fill="#245a90" text-anchor="middle">Gloom</text></g>
+        <g><circle cx="229" cy="297" r="8" fill="#eef3f9" stroke="#2f6fb0" stroke-width="1.5"/><text x="249" y="300" font-size="10" fill="#245a90" text-anchor="start">Sadness</text></g>
+        <g><circle cx="255" cy="264" r="8" fill="#eef3f9" stroke="#2f6fb0" stroke-width="1.5"/><text x="275" y="267" font-size="10" fill="#245a90" text-anchor="start">Disappointment</text></g>
+        <g><circle cx="441" cy="90" r="8" fill="#f9f0e6" stroke="#cf8636" stroke-width="3.4"/><text x="441" y="77" font-size="10" fill="#a5661f" text-anchor="middle">Excitement</text></g>
+        <g><circle cx="483" cy="100" r="8" fill="#f9f0e6" stroke="#cf8636" stroke-width="3.4"/><text x="503" y="103" font-size="10" fill="#a5661f" text-anchor="start">Ecstasy</text></g>
+        <g><circle cx="505" cy="123" r="8" fill="#f9f0e6" stroke="#cf8636" stroke-width="3.4"/><text x="525" y="126" font-size="10" fill="#a5661f" text-anchor="start">Elation</text></g>
+        <g><circle cx="452" cy="288" r="8" fill="#f9f0e6" stroke="#cf8636" stroke-width="1.5"/><text x="452" y="310" font-size="10" fill="#a5661f" text-anchor="middle">Relief</text></g>
+        <g><circle cx="468" cy="264" r="8" fill="#f9f0e6" stroke="#cf8636" stroke-width="1.5"/><text x="488" y="267" font-size="10" fill="#a5661f" text-anchor="start">Contentment</text></g>
+        <g><circle cx="531" cy="307" r="8" fill="#f9f0e6" stroke="#cf8636" stroke-width="1.5"/><text x="531" y="329" font-size="10" fill="#a5661f" text-anchor="middle">Serenity</text></g>
+      </svg>
+      <div style="display:flex; flex-wrap:wrap; gap:14px 20px; justify-content:center; padding:6px 4px 4px; font-size:8pt; color:#4a4a50;">
+        <span style="display:inline-flex; align-items:center; gap:6px;"><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="#f9f0e6" stroke="#cf8636" stroke-width="1.6"/></svg>Pleasant emotions</span>
+        <span style="display:inline-flex; align-items:center; gap:6px;"><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="#eef3f9" stroke="#2f6fb0" stroke-width="1.6"/></svg>Unpleasant emotions</span>
+        <span style="display:inline-flex; align-items:center; gap:6px;"><svg width="16" height="16"><circle cx="8" cy="8" r="5.5" fill="none" stroke="#6d6d73" stroke-width="3.4"/></svg>Thick outline = high arousal</span>
+        <span style="display:inline-flex; align-items:center; gap:6px;"><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="#6d6d73" stroke-width="1.5"/></svg>Thin outline = low arousal</span>
+      </div>
+    </div>
+    <figcaption style="font-size:8.5pt; line-height:1.6; color:#5a5a60; padding:11px 18px 14px; background:#fbfbfa; border-top:1px solid #eceae5;">Representative words drawn from the 99. The horizontal direction corresponds to “pleasure”; the vertical direction and outline thickness correspond to “arousal”. Inside the two large clusters (dashed), arousal spreads from low to high. Positions are a schematic layout based on the analysis.</figcaption>
+  </figure>
+
+  <!-- ===== SECTION 05 ===== -->
+  <h2 style="font-family:'Noto Serif',serif; font-size:15pt; font-weight:700; color:#1d1d1f; margin:34px 0 12px; padding-bottom:6px; border-bottom:2px solid #2f6fb0; display:flex; align-items:baseline; gap:11px;"><span style="font-size:11pt; color:#2f6fb0; font-weight:700; font-family:'Noto Sans',sans-serif;">05</span>The number of words you examine changes the structure you see</h2>
+  <p style="margin:0 0 12px;">These results show that the scale of the vocabulary matters when studying the structure of emotion. Using only a few representative emotion words makes large differences such as “pleasant vs. unpleasant” easy to find, but finer differences such as “excited vs. calm” may be overlooked. Part of the reason existing emotion theories differ from one another may lie in the number and choice of emotion words used in each study.</p>
+
+  <!-- ===== SECTION 06 ===== -->
+  <h2 style="font-family:'Noto Serif',serif; font-size:15pt; font-weight:700; color:#1d1d1f; margin:34px 0 12px; padding-bottom:6px; border-bottom:2px solid #2f6fb0; display:flex; align-items:baseline; gap:11px;"><span style="font-size:11pt; color:#2f6fb0; font-weight:700; font-family:'Noto Sans',sans-serif;">06</span>Using AI as a “measuring instrument”, not an “answer machine”</h2>
+  <p style="margin:0 0 12px;">Tuning word embeddings to a research purpose can require expertise in machine learning, training data, and a computing environment. In the present method, by contrast, researchers give GPT-4 a task in ordinary sentences and analyze its responses. This may make it an accessible method for researchers who do not specialize in machine learning — for example, in psychology or linguistics.</p>
+  <p style="margin:0 0 12px;">In the future, the team plans to examine whether the same structure appears in different languages, including Japanese, and how the arrangement of emotion words changes across cultures. Note that this study addressed not the actual experience of emotion, but the <strong style="font-weight:700; color:#1d1d1f;">semantic and conceptual structure</strong> of the words that express emotion. How far the structure shown by GPT-4 corresponds to actual emotional experience, or to emotional representations in the brain, remains to be verified.</p>
+
+  <!-- ===== GLOSSARY ===== -->
+  <div style="break-inside:avoid; margin:30px 0 8px; background:#f6f8fb; border:1px solid #dfe6ef; border-radius:6px; padding:18px 22px;">
+    <div style="font-family:'Noto Serif',serif; font-weight:700; font-size:12pt; color:#1d1d1f; margin-bottom:12px;">Glossary</div>
+    <div style="display:grid; grid-template-columns:auto 1fr; gap:9px 16px; font-size:9pt; line-height:1.65;">
+      <div style="font-weight:700; color:#245a90; white-space:nowrap;">Emotion word</div><div style="color:#3a3a3e;">A word expressing an emotion or emotional state, such as “joy”, “fear”, or “relief”.</div>
+      <div style="font-weight:700; color:#245a90; white-space:nowrap;">Prompting</div><div style="color:#3a3a3e;">Giving a large language model instructions or questions in ordinary sentences to obtain answers. This study used GPT-4 with no additional training.</div>
+      <div style="font-weight:700; color:#245a90; white-space:nowrap;">Word embedding</div><div style="color:#3a3a3e;">A method that represents a word’s meaning with many numbers. Words with similar meanings tend to sit at nearby positions in the numeric space.</div>
+      <div style="font-weight:700; color:#245a90; white-space:nowrap;">PAD model</div><div style="color:#3a3a3e;">A psychological model that represents emotion along three axes: Pleasure, Arousal, and Dominance.</div>
+    </div>
+  </div>
+
+  <!-- ===== PAPER ACCESS ===== -->
+  <div style="break-inside:avoid; margin-top:30px; border-top:2.5px solid #1d1d1f; padding-top:18px;">
+    <div style="font-size:8.5pt; font-weight:700; letter-spacing:.08em; color:#2f6fb0; margin-bottom:8px;">ACCESS THE PAPER</div>
+    <p style="margin:0; font-size:9.5pt; line-height:1.75; color:#3a3a3e;">
+      Ke, H., Watanabe, E. <em>Mapping 99 emotion terms with GPT4 prompting reveals nuanced semantic conceptual structure.</em> <strong>Scientific Reports</strong> (2026).
+      <a href="https://doi.org/10.1038/s41598-026-60536-4" target="_blank" rel="noopener noreferrer" style="font-weight:700;">https://doi.org/10.1038/s41598-026-60536-4</a>
+    </p>
+  </div>
+
+</div>
+</x-import>
+</x-dc>
+</body>
+</html>
