@@ -24,3 +24,4 @@ Dimensional theories of emotion propose that affective experiences can be organi
 ---
 
 <img src="6.png" alt="image" width="600">
+Mapping 99 Emotion Terms
